@@ -11,7 +11,7 @@ public class LoginController {
 	@RequestMapping(path="hello",method = RequestMethod.GET)
 	public ModelAndView loginRedirect() {
 		System.out.println("first print");
-		return new ModelAndView("hello");
+		return new ModelAndView("login");
 	}
 
 }
