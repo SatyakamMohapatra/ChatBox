@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(path="/hello",method = RequestMethod.GET)
+	@RequestMapping(path="hello",method = RequestMethod.GET)
 	public ModelAndView loginRedirect() {
 		System.out.println("first print");
 		return new ModelAndView("hello");
