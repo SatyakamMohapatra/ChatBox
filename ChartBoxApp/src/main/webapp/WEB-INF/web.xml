@@ -8,6 +8,9 @@
 	
 	<display-name>Chart Box App</display-name>
 	
+	 <welcome-file-list>
+    <welcome-file>NewFile.html</welcome-file>
+  	</welcome-file-list>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
