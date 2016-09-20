@@ -8,12 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(path="login",method = RequestMethod.GET)
+	@RequestMapping(value="login",method = RequestMethod.GET)
 	public ModelAndView loginRedirect() {
 		System.out.println("[com.chartboxapp.controller.LoginController][loginRedirect][ login Page Loaded]");
 		return new ModelAndView("login");
 	}
-	@RequestMapping(path="register",method = RequestMethod.GET)
+	@RequestMapping(value="register",method = RequestMethod.GET)
 	public ModelAndView registerRedirect() {
 		System.out.println("[com.chartboxapp.controller.LoginController][registerRedirect][ register Page Loaded]");
 		return new ModelAndView("register");
