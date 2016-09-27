@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,22 +36,25 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
-    <form action="../../index2.html" method="post">
+    
+    <form:form action="login" method="post" modelAttribute="LoginModel">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+      	<form:input path="emailID" cssClass="form-control"/>
+        <%-- <form type="emailID" class="form-control" placeholder="Email"> --%>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+      <form:password path="password" cssClass="form-control"/>
+        <!-- <input type="password" class="form-control" placeholder="Password"> -->
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
+            <%-- <form:checkbox path=""/> Remember Me --%>
               <input type="checkbox"> Remember Me
-            </label>
+            <label>
           </div>
         </div>
         <!-- /.col -->
@@ -59,7 +63,7 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+    </form:form>
 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
