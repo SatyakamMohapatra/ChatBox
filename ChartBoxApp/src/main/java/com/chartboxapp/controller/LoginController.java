@@ -2,6 +2,7 @@ package com.chartboxapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,6 +19,7 @@ public class LoginController {
 		return new ModelAndView("login","LoginModel",new LoginForm() );
 	}
 	
+	//@PostMapping(value="login")
 	@RequestMapping(value="login",method = RequestMethod.POST)
 	public ModelAndView ProfileRedirect(@ModelAttribute("LoginModel") LoginForm loginForm) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
