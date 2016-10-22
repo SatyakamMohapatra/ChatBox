@@ -1,92 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project 
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
                         http://maven.apache.org/maven-v4_0_0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.chartbox</groupId>
-    <artifactId>ChartBoxApp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>Chart Box App</name>
-    <description>Chart Box App (A Java EE Application Using Spring Framework 4.3.2)</description>
-    
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <servlet.version>3.1.0</servlet.version>
-        <jstl.version>1.2</jstl.version>
-        <jackson.version>1.9.10</jackson.version>
-        <spring.version>4.3.2.RELEASE</spring.version>
-        <mysql.version>5.1.38</mysql.version>
-    </properties>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.chartbox</groupId>
+	<artifactId>ChartBoxApp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Chart Box App</name>
+	<description>Chart Box App (A Java EE Application Using Spring Framework 4.3.2)</description>
 
-    <dependencies>
-        <!-- JavaEE Capacity Start -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- JavaEE Capacity End -->
 
-        <!-- JSTL Dependency Start -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
-        </dependency>
-        <!-- JSTL Dependency End -->
-        
-        <!-- Jackson (JSON) Mapper Dependency Start -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <!-- Jackson (JSON) Mapper Dependency End -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<servlet.version>3.1.0</servlet.version>
+		<jstl.version>1.2</jstl.version>
+		<jackson.version>1.9.10</jackson.version>
+		<spring.version>4.3.2.RELEASE</spring.version>
+		<mysql.version>5.1.38</mysql.version>
+	</properties>
 
-        <!-- SpringFramework Dependencies Start -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <!-- SpringFramework Dependencies End -->
+	<dependencies>
+		<!-- JavaEE Capacity Start -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JavaEE Capacity End -->
 
-        <!-- MySQL Dependency Start -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
-        </dependency>
-        <!-- MySQL Dependency End -->
-    </dependencies>
+		<!-- JSTL Dependency Start -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<!-- JSTL Dependency End -->
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.5</version>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                        <compilerArgument/>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+		<!-- Jackson (JSON) Mapper Dependency Start -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<!-- Jackson (JSON) Mapper Dependency End -->
+
+		<!-- SpringFramework Dependencies Start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- SpringFramework Dependencies End -->
+
+		<!-- MySQL Dependency Start -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+		<!-- MySQL Dependency End -->
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<compilerArgument />
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>ChartBoxApp</warName>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
