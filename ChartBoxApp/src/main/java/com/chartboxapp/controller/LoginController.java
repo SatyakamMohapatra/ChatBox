@@ -16,6 +16,7 @@ public class LoginController {
 	public ModelAndView loginRedirect() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[loginRedirect][ login Page Loaded]");
+		
 		return new ModelAndView("login","LoginModel",new LoginForm() );
 	}
 	
