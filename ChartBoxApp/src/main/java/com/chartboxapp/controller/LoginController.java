@@ -19,7 +19,6 @@ public class LoginController {
 		return new ModelAndView("login","LoginModel",new LoginForm() );
 	}
 	
-	//@PostMapping(value="login")
 	@RequestMapping(value="login",method = RequestMethod.POST)
 	public ModelAndView ProfileRedirect(@ModelAttribute("LoginModel") LoginForm loginForm) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
@@ -33,6 +32,14 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerRedirect][ register Page Loaded]");
 		return new ModelAndView("register");
+	}
+	
+	@RequestMapping(value="login",method = RequestMethod.POST)
+	public ModelAndView registrationHandler(@ModelAttribute("LoginModel") LoginForm loginForm) {
+		System.out.println("[com.chartboxapp.controller.LoginController]"
+				+ "[ProfileRedirect][ Trying To Load Profile Page Loaded]");
+		System.out.println(loginForm);
+		return new ModelAndView("profile");
 	}
 
 }
