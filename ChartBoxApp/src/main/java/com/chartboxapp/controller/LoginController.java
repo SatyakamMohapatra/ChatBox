@@ -2,7 +2,6 @@ package com.chartboxapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,14 +32,6 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerRedirect][ register Page Loaded]");
 		return new ModelAndView("register");
-	}
-	
-	@RequestMapping(value="login",method = RequestMethod.POST)
-	public ModelAndView registrationHandler(@ModelAttribute("LoginModel") LoginForm loginForm) {
-		System.out.println("[com.chartboxapp.controller.LoginController]"
-				+ "[ProfileRedirect][ Trying To Load Profile Page Loaded]");
-		System.out.println(loginForm);
-		return new ModelAndView("profile");
 	}
 
 }
