@@ -19,6 +19,13 @@ public class LoginController {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@RequestMapping(value="/",method = RequestMethod.GET)
+	public ModelAndView redirectToLogin() {
+		System.out.println("[com.chartboxapp.controller.LoginController]"
+				+ "[loginView][ login Page Loaded]");
+		return new ModelAndView("redirect:login");
+	}
+	
 	@RequestMapping(value="login",method = RequestMethod.GET)
 	public ModelAndView loginView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
