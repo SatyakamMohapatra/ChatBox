@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,17 +37,17 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form action="../../index.html" method="post">
+    <form:form action="register" method="post" modelAttribute="RegesterModel">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Full name">
+      	<form:input path="name" cssClass="form-control" placeholder="Full name"/>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+      	<form:input path="email" type="email" cssClass="form-control" placeholder="Email"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <form:password path="password" cssClass="form-control" placeholder="Password"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -66,7 +68,7 @@
         </div>
         <!-- /.col -->
       </div>
-    </form>
+    </form:form>
 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
