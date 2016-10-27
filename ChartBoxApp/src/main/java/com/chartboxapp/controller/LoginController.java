@@ -38,7 +38,7 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
 		System.out.println(loginForm);
-		jdbcTemplate.execute("INSERT INTO hibernet.user_details (`home_city`, `home_pin_code`, `home_state`, `join_date`, `user_name`) VALUES ('satya', '789545', 'Odihaa', '2016-10-23', 'satya')");
+		//jdbcTemplate.execute("INSERT INTO hibernet.user_details (`home_city`, `home_pin_code`, `home_state`, `join_date`, `user_name`) VALUES ('satya', '789545', 'Odihaa', '2016-10-23', 'satya')");
 		return new ModelAndView("profile");
 	}
 	
