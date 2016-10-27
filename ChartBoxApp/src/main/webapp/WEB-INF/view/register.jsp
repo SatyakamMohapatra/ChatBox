@@ -11,15 +11,15 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="../Resource/bootstrap/css/bootstrap.min.css">
+  <link href="<c:url value="/Resource/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../Resource/dist/css/AdminLTE.min.css">
+  <link href="<c:url value="/Resource/dist/css/AdminLTE.min.css" />" rel="stylesheet">
   <!-- iCheck -->
-  <link rel="stylesheet" href="../Resource/plugins/iCheck/square/blue.css">
+  <link href="<c:url value="/Resource/plugins/iCheck/square/blue.css" />" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,11 +85,11 @@
 <!-- /.register-box -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../Resource/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<c:url value="/Resource/plugins/jQuery/jquery-2.2.3.min.js" />"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="../Resource/bootstrap/js/bootstrap.min.js"></script>
+<script src="<c:url value="/Resource/bootstrap/js/bootstrap.min.js" />"></script>
 <!-- iCheck -->
-<script src="../Resource/plugins/iCheck/icheck.min.js"></script>
+<script src="<c:url value="/Resource/plugins/iCheck/icheck.min.js" />"></script>
 <script>
   $(function () {
     $('input').iCheck({
