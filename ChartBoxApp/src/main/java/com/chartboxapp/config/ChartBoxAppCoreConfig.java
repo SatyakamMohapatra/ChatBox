@@ -51,7 +51,6 @@ public class ChartBoxAppCoreConfig {
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		System.out.println("[ChartBoxAppCoreConfig.class][dataSource()][DB Driver Loaded]");
-		System.out.println(environment.getProperty("db.classLoader"));
 		dataSource.setDriverClassName(environment.getProperty("db.classLoader"));
 		dataSource.setUrl(environment.getProperty("db.url"));
 		dataSource.setUsername(environment.getProperty("db.username"));

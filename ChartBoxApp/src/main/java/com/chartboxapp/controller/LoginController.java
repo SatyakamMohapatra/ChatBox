@@ -54,7 +54,6 @@ public class LoginController {
 	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterDto registerDto) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerProcess][ register Page Loaded]");
-		
 		accountService.addUser(registerDto);
 		System.out.println(registerDto);
 		return new ModelAndView("redirect:login");
