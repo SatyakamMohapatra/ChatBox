@@ -30,9 +30,7 @@ public class ChartBoxAppCoreConfig {
 	private String username;
 	@Value(value = "${db.password}")
 	private String Password;
-/*	
-	@Autowired
-	private DataSource dataSource;*/
+	
 	
 	@Bean
 	public JdbcTemplate JdbcTemplate(){
