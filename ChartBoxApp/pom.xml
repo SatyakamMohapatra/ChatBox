@@ -21,9 +21,16 @@
 		<jackson.version>1.9.10</jackson.version>
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<mysql.version>5.1.38</mysql.version>
+		<hibernate.version>5.2.2.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
+		<!-- LOG -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 		<!-- JavaEE Capacity Start -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -60,6 +67,11 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- SpringFramework Dependencies End -->
 
 		<!-- MySQL Dependency Start -->
@@ -69,6 +81,13 @@
 			<version>${mysql.version}</version>
 		</dependency>
 		<!-- MySQL Dependency End -->
+		
+		<!-- JPA Vendor -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

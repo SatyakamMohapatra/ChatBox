@@ -1,6 +1,8 @@
 package com.chartboxapp.config;
 
 import javax.sql.DataSource;
+
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +13,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+import com.sun.org.apache.regexp.internal.recompile;
 
 @Configuration
 @ComponentScan(basePackages   ={"com.chartboxapp"},
@@ -22,14 +27,17 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @PropertySource(value="classpath:/com/chartboxapp/prop/chartboxapp.properties",ignoreResourceNotFound=true)
 public class ChartBoxAppCoreConfig {
 	
-	@Value(value = "${db.classLoader}")
-	private String driverClass;
-	@Value(value = "${db.url}")
-	private String url;
-	@Value(value = "${db.username}")
-	private String username;
-	@Value(value = "${db.password}")
-	private String Password;
+	/*
+	 * DataSource Properties
+	 */
+	@Value(value = "${db.classLoader}") private String driverClass;
+	@Value(value = "${db.url}")			private String url;
+	@Value(value = "${db.username}")    private String username;
+	@Value(value = "${db.password}")    private String Password;
+	/*
+	 * Hibernet Properties
+	 */
+	
 	
 	
 	@Bean
@@ -51,5 +59,14 @@ public class ChartBoxAppCoreConfig {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer placeholderConfigurer(){
 		return new PropertySourcesPlaceholderConfigurer();
+	}
+	
+	@Bean
+	public LocalSessionFactoryBean sessionFactory(DataSource dataSource){
+		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource);
+		sessionFactory.setPackagesToScan(new String[]{"com.chartboxapp.form"});
+		//Add Properties
+		return sessionFactory;
 	}
 }
