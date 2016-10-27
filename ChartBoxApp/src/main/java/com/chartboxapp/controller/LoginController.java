@@ -10,14 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.chartboxapp.dto.RegisterDto;
 import com.chartboxapp.form.LoginForm;
 import com.chartboxapp.form.RegisterForm;
+import com.chartboxapp.service.AccountService;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private AccountService accountService;
 	
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public ModelAndView redirectToLogin() {
@@ -38,7 +40,6 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
 		System.out.println(loginForm);
-		//jdbcTemplate.execute("INSERT INTO hibernet.user_details (`home_city`, `home_pin_code`, `home_state`, `join_date`, `user_name`) VALUES ('satya', '789545', 'Odihaa', '2016-10-23', 'satya')");
 		return new ModelAndView("profile");
 	}
 	
@@ -46,14 +47,16 @@ public class LoginController {
 	public ModelAndView registerView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerView][ register Page Loaded]");
-		return new ModelAndView("register","RegesterModel",new RegisterForm());
+		return new ModelAndView("register","RegesterModel",new RegisterDto());
 	}
 	
 	@RequestMapping(value="register",method = RequestMethod.POST)
-	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterForm registerForm) {
+	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterDto registerDto) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerProcess][ register Page Loaded]");
-		System.out.println(registerForm);
+		
+		accountService.addUser(registerDto);
+		System.out.println(registerDto);
 		return new ModelAndView("redirect:login");
 	}
 
