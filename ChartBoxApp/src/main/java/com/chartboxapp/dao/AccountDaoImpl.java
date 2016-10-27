@@ -23,7 +23,6 @@ public class AccountDaoImpl implements AccountDao {
 		Transaction tx = session.getTransaction();
 		System.out.println(tx.isActive()+" session is active");
 		session.save(registerDto);
-		
 	}
 
 }
