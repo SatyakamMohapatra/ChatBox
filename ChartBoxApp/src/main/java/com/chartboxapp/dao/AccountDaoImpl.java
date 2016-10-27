@@ -2,8 +2,10 @@ package com.chartboxapp.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.chartboxapp.dto.RegisterDto;
 import com.chartboxapp.form.RegisterForm;
@@ -17,7 +19,9 @@ public class AccountDaoImpl implements AccountDao {
 	@Override
 	public void addUser(RegisterDto registerDto) {
 		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
+		System.out.println(session.isOpen()+" open "+session.isConnected());
+		Transaction tx = session.getTransaction();
+		System.out.println(tx.isActive()+" session is active");
 		session.save(registerDto);
 		
 	}

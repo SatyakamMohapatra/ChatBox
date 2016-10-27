@@ -5,8 +5,10 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.tomcat.jni.Local;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +16,12 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -27,16 +32,26 @@ import com.sun.org.apache.regexp.internal.recompile;
 			   excludeFilters ={
 							   @Filter(type  = FilterType.ANNOTATION,
 									   value = EnableWebMvc.class)})
-@PropertySource(value="classpath:/resource/chartboxapp.properties",ignoreResourceNotFound=true)
+@PropertySource(value={"classpath:chartboxapp.properties"})
+@EnableTransactionManagement
 public class ChartBoxAppCoreConfig {
 	
 	@Autowired
-    private Environment environment;
+	Environment environment;
+	
+    @Bean
+    @Autowired
+    public HibernateTransactionManager transactionManager(SessionFactory s) {
+       HibernateTransactionManager txManager = new HibernateTransactionManager();
+       txManager.setSessionFactory(s);
+       return txManager;
+    }
 	
 	@Bean
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		System.out.println("[ChartBoxAppCoreConfig.class][dataSource()][DB Driver Loaded]");
+		System.out.println(environment.getProperty("db.classLoader"));
 		dataSource.setDriverClassName(environment.getProperty("db.classLoader"));
 		dataSource.setUrl(environment.getProperty("db.url"));
 		dataSource.setUsername(environment.getProperty("db.username"));
@@ -62,8 +77,12 @@ public class ChartBoxAppCoreConfig {
 	public LocalSessionFactoryBean sessionFactory(DataSource dataSource){
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
-		sessionFactory.setPackagesToScan(new String[]{"com.chartboxapp.form"});
+		sessionFactory.setPackagesToScan(new String[]{"com.chartboxapp.dto"});
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}
+/*	@Bean
+	public BeanPostProcessor persistenceTranslation(){
+		return new PersistenceExceptionTranslationPostProcessor();
+	}*/
 }

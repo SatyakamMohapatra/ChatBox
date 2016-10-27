@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -39,15 +40,15 @@
 
     <form:form action="register" method="post" modelAttribute="RegesterModel">
       <div class="form-group has-feedback">
-      	<form:input path="name" cssClass="form-control" placeholder="Full name"/>
+      	<form:input path="userName" cssClass="form-control" placeholder="Full name"/>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-      	<form:input path="email" type="email" cssClass="form-control" placeholder="Email"/>
+      	<form:input path="userEmail" type="email" cssClass="form-control" placeholder="Email"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <form:password path="password" cssClass="form-control" placeholder="Password"/>
+        <form:password path="userPassword" cssClass="form-control" placeholder="Password"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
