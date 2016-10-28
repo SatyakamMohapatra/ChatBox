@@ -67,7 +67,7 @@ public class ChartBoxAppCoreConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect",environment.getProperty("hibernate.dialect"));
 		properties.put("hibernate.show_sql",environment.getProperty("hibernate.show_sql"));
-		properties.put("hibernate.hbm2ddl.autot",environment.getProperty("hibernate.hbm2ddl.auto"));
+		properties.put("hibernate.hbm2ddl.auto",environment.getProperty("hibernate.hbm2ddl.auto"));
 		properties.put("hibernate.connection.pool_size",environment.getProperty("hibernate.connection.pool_size"));
 		return properties;
 	}

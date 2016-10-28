@@ -5,6 +5,7 @@ import com.chartboxapp.form.RegisterForm;
 
 public interface AccountDao {
 	
-	void addUser(RegisterDto registerDto);
+	public void addUser(RegisterDto registerDto);
+	
 
 }
