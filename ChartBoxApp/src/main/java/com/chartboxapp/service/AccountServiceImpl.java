@@ -1,5 +1,8 @@
 package com.chartboxapp.service;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +19,8 @@ public class AccountServiceImpl implements AccountService {
 	
 	@Override
 	public void addUser(RegisterDto registerDto) {
+		Date date = Calendar.getInstance().getTime();
+		registerDto.setUserCreateDate(date);
 		accountDao.addUser(registerDto);
 	}
 

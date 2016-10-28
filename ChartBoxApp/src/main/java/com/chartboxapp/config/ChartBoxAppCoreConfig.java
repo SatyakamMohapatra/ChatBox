@@ -50,7 +50,7 @@ public class ChartBoxAppCoreConfig {
 	@Bean
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		System.out.println("[ChartBoxAppCoreConfig.class][dataSource()][DB Driver Loaded]");
+		System.out.println("[ChartBoxAppCoreConfig.class][dataSource()][DB Driver Loaded]");		
 		dataSource.setDriverClassName(environment.getProperty("db.classLoader"));
 		dataSource.setUrl(environment.getProperty("db.url"));
 		dataSource.setUsername(environment.getProperty("db.username"));
@@ -80,6 +80,7 @@ public class ChartBoxAppCoreConfig {
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}
+	
 /*	@Bean
 	public BeanPostProcessor persistenceTranslation(){
 		return new PersistenceExceptionTranslationPostProcessor();
