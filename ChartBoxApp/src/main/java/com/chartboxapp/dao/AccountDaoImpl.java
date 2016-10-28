@@ -1,5 +1,7 @@
 package com.chartboxapp.dao;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,6 +22,14 @@ public class AccountDaoImpl implements AccountDao {
 	public void addUser(RegisterDto registerDto) {
 		sessionFactory.getCurrentSession().save(registerDto);
 		
+	}
+
+	@Override
+	public RegisterDto getUser(RegisterDto RegisterDto) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from RegisterDto where userName"
+				+ " = :userName");
+		query.setParameter("userName", value)
+		return null;
 	}
 
 }
