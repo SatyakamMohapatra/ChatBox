@@ -28,7 +28,7 @@ public class AccountDaoImpl implements AccountDao {
 	public RegisterDto getUser(RegisterDto RegisterDto) {
 		Query query=sessionFactory.getCurrentSession().createQuery("from RegisterDto where userName"
 				+ " = :userName");
-		query.setParameter("userName", value)
+		//query.setParameter("userName", value)
 		return null;
 	}
 
