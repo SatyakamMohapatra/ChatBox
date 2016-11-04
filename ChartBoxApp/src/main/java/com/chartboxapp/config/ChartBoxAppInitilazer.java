@@ -11,7 +11,6 @@ public class ChartBoxAppInitilazer extends AbstractAnnotationConfigDispatcherSer
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		// TODO Auto-generated method stub
 		return new Class<?>[]{ChartBoxAppConfig.class};
 	}
 

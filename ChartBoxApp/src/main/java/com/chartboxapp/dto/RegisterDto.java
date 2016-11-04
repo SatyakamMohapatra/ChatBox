@@ -1,11 +1,16 @@
 package com.chartboxapp.dto;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="user_details")
@@ -20,7 +25,16 @@ public class RegisterDto {
 	private String userEmail;
 	@Column(name="user_password",nullable=false)
 	private String userPassword;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="user_createion_date",nullable=false)
+	private Date userCreateDate;
 	
+	public Date getUserCreateDate() {
+		return userCreateDate;
+	}
+	public void setUserCreateDate(Date userCreateDate) {
+		this.userCreateDate = userCreateDate;
+	}
 	public int getUserID() {
 		return userID;
 	}
