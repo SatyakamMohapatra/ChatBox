@@ -18,7 +18,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<servlet.version>3.1.0</servlet.version>
 		<jstl.version>1.2</jstl.version>
-		<jackson.version>1.9.10</jackson.version>
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<mysql.version>5.1.38</mysql.version>
 		<hibernate.version>5.2.2.Final</hibernate.version>
@@ -52,7 +51,12 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.4</version>
 		</dependency>
 		<!-- Jackson (JSON) Mapper Dependency End -->
 
@@ -81,7 +85,7 @@
 			<version>${mysql.version}</version>
 		</dependency>
 		<!-- MySQL Dependency End -->
-		
+
 		<!-- JPA Vendor -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
