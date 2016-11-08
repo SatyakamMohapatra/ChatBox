@@ -4,11 +4,8 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import org.apache.tomcat.jni.Local;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +13,6 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -25,13 +20,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.sun.org.apache.regexp.internal.recompile;
-
 @Configuration
 @ComponentScan(basePackages   ={"com.chartboxapp"},
 			   excludeFilters ={
-							   @Filter(type  = FilterType.ANNOTATION,
-									   value = EnableWebMvc.class)})
+					   @Filter(type  = FilterType.ANNOTATION,
+										   value = EnableWebMvc.class)})
 @PropertySource(value={"classpath:chartboxapp.properties"})
 @EnableTransactionManagement
 public class ChartBoxAppCoreConfig {
