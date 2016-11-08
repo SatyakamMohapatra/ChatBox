@@ -74,8 +74,5 @@ public class ChartBoxAppCoreConfig {
 		return sessionFactory;
 	}
 	
-/*	@Bean
-	public BeanPostProcessor persistenceTranslation(){
-		return new PersistenceExceptionTranslationPostProcessor();
-	}*/
+
 }
