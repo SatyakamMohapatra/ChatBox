@@ -44,7 +44,8 @@ public class LoginController {
 	@RequestMapping(value="register",method = RequestMethod.GET)
 	public ModelAndView registerView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
-				+ "[registerView][ register Page Loaded]");
+				
+				+ "[registerView][ register Page Loaded]");		
 		return new ModelAndView("register","RegesterModel",new RegisterDto());
 	}
 	

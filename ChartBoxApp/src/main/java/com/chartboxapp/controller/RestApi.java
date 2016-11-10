@@ -23,13 +23,11 @@ public class RestApi {
 		dto.setUserEmail("satya@gmail.com");
 		dto.setUserName(username);
 		dto.setUserPassword("satya");
-		
-		
 		return dto;
 	}
+	
 	@RequestMapping(method=RequestMethod.PUT,path="/api/setuserapi")
 	public ResponseEntity<RegisterDto> setUserApi(@RequestBody RegisterDto dto){
-		
 		
 		if(dto.getUserID()==10){
 			System.out.println(dto);
