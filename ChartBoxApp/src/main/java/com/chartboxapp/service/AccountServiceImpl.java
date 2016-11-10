@@ -24,4 +24,10 @@ public class AccountServiceImpl implements AccountService {
 		accountDao.addUser(registerDto);
 	}
 
+	@Override
+	public RegisterDto getUser(String EmailID) {
+		RegisterDto result = accountDao.getUser(EmailID);
+		return result;
+	}
+
 }

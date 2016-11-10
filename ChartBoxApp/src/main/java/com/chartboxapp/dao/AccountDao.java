@@ -6,6 +6,6 @@ public interface AccountDao {
 	
 	public void addUser(RegisterDto registerDto);
 	
-	public RegisterDto getUser(RegisterDto registerDto);
+	public RegisterDto getUser(String EmailID);
 
 }

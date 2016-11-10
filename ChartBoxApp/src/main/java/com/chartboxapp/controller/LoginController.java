@@ -37,6 +37,7 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
 		System.out.println(loginForm);
+		System.out.println(accountService.getUser(loginForm.getEmailID()));
 		return new ModelAndView("profile");
 	}
 	

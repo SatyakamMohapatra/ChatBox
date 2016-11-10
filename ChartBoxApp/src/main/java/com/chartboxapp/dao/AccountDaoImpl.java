@@ -23,11 +23,13 @@ public class AccountDaoImpl implements AccountDao {
 	}
 
 	@Override
-	public RegisterDto getUser(RegisterDto RegisterDto) {
-		Query query=sessionFactory.getCurrentSession().createQuery("from RegisterDto where userName"
-				+ " = :userName");
-		//query.setParameter("userName", value)
-		return null;
+	public RegisterDto getUser(String EmailID) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from RegisterDto where userEmail"
+				+ " = :userEmail");
+		System.out.println(EmailID);
+		RegisterDto result =(RegisterDto) query.setParameter("userEmail", EmailID).getSingleResult();
+	
+		System.out.println(result);
+		return result;
 	}
-
 }

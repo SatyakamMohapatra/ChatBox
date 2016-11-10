@@ -1,8 +1,6 @@
 package com.chartboxapp.dto;
 
-import java.util.Calendar;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,11 +14,12 @@ import javax.persistence.TemporalType;
 @Table(name="user_details")
 public class RegisterDto {
 	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")
 	private int userID;
 	@Column(name="user_name",nullable=false)
 	private String userName;
+	@Id
 	@Column(name="user_email",nullable=false)
 	private String userEmail;
 	@Column(name="user_password",nullable=false)
