@@ -37,6 +37,13 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
 		System.out.println(loginForm);
+		/*
+		 *   Rest Api consume code
+		 */
+		System.out.println("[com.chartboxapp.controller.LoginController][Rest Api consume action started]");
+		System.out.println(ConsumeRESTApi.putUserData(10));
+		System.out.println("[com.chartboxapp.controller.LoginController][Rest Api consume action ended]");
+	    //---------------------------------------------------------------
 		System.out.println(accountService.getUser(loginForm.getEmailID()));
 		return new ModelAndView("profile");
 	}
