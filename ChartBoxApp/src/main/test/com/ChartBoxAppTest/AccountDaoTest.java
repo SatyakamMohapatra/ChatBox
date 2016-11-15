@@ -3,7 +3,6 @@ package com.ChartBoxAppTest;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import com.chartboxapp.dto.RegisterDto;
 
 public class AccountDaoTest {
@@ -13,7 +12,8 @@ public class AccountDaoTest {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.getCurrentSession();
 		session.beginTransaction();
-	
+		
+
 		RegisterDto registerDto = new RegisterDto();
 		registerDto.setUserEmail("satya");
 		registerDto.setUserName("demo");;

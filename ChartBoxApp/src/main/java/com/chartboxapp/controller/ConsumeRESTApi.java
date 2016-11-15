@@ -1,7 +1,5 @@
 package com.chartboxapp.controller;
 
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import com.chartboxapp.dto.RegisterDto;
