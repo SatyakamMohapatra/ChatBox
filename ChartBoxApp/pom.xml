@@ -78,6 +78,20 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.1.0.RELEASE</version>
+		</dependency>
+
+
 
 		<!-- MySQL Dependency Start -->
 		<dependency>
@@ -86,7 +100,7 @@
 			<version>${mysql.version}</version>
 		</dependency>
 		<!-- MySQL Dependency End -->
-		
+
 		<!-- JPA Vendor -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
