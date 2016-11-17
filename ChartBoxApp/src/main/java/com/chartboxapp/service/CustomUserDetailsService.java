@@ -27,7 +27,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 			System.out.println("CustomUserDetailsService[loadUserByUsername][UserDetails:-][UserNotFound]");	
 			throw new UsernameNotFoundException("User Email ID NotFound");
 		}
-		//Add and active and inactive colume in database and change 3rd Para 
+		//Add and active and inactive colume in database and change 3rd Para
 		return new org.springframework.security.core.userdetails.User(user.getUserEmail(),user.getUserPassword(),true,true,true,true,getGrantedAuthorities(user));
 		
 	}
