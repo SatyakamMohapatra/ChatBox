@@ -1,4 +1,4 @@
-package com.chartboxapp.controller;
+package com.chartboxapp.restApi;
 
 import java.net.URI;
 import java.net.URISyntaxException;
