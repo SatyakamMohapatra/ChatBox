@@ -1,4 +1,4 @@
-package com.chartboxapp.config;
+package com.chartboxapp.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
