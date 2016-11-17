@@ -13,12 +13,11 @@ public class ChartBoxSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		//auth
-		/*.inMemoryAuthentication()
+		auth
+		.inMemoryAuthentication()
 		.withUser("satya").password("qwaszx").roles("USER")        
 		.and()
-		.withUser("ram").password("ram").roles("USER","ADMIN");*/
-		//.jdbcAuthentication().dataSource(dataSource);
+		.withUser("ram").password("ram").roles("USER","ADMIN");
 	}
 
 }
