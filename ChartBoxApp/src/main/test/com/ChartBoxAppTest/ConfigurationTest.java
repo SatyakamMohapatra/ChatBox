@@ -4,6 +4,7 @@ public class ConfigurationTest {
 
 	public static void main(String[] args) {
 		
+		
 	}
 
 }

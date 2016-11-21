@@ -21,7 +21,6 @@ public class AccountDaoTest {
 		session.save(registerDto);
 		session.getTransaction().commit();
 		session.close();
-		
 
 	}
 

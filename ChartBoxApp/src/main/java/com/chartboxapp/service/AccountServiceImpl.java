@@ -28,6 +28,7 @@ public class AccountServiceImpl implements AccountService {
 	public RegisterDto getUser(String EmailID) {
 		RegisterDto result = accountDao.getUser(EmailID);
 		return result;
+		
 	}
 
 }

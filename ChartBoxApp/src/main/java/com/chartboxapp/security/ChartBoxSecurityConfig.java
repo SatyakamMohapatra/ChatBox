@@ -28,6 +28,7 @@ protected void configure(HttpSecurity http) throws Exception {
 		.and()
 	.logout()
 		.permitAll();
+
 }
 
 }

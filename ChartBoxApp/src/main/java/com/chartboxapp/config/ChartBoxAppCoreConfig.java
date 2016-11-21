@@ -38,6 +38,7 @@ public class ChartBoxAppCoreConfig {
        HibernateTransactionManager txManager = new HibernateTransactionManager();
        txManager.setSessionFactory(s);
        return txManager;
+       
     }
 	
 	@Bean

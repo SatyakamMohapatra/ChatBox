@@ -17,6 +17,7 @@ public class LoginForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	@Override
 	public String toString() {
 		

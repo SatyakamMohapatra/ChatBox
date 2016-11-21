@@ -37,6 +37,7 @@ public class RestApi {
 		dto.setUserEmail("satya@gmail.com");
 		dto.setUserName("satya");
 		dto.setUserPassword("satya");
+		
 		HttpHeaders responseHeaders = new HttpHeaders();
 		URI uri = new URI("/api/setuserapi/"+userID);
 		responseHeaders.setLocation(uri);

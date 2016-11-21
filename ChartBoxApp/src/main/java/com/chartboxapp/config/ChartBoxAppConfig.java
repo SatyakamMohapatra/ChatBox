@@ -23,6 +23,7 @@ public class ChartBoxAppConfig extends WebMvcConfigurerAdapter {
 		viewResolver.setSuffix(".jsp");
 		viewResolver.setExposeContextBeansAsAttributes(true);
 		return viewResolver;
+		
 	}
 	
 	@Override

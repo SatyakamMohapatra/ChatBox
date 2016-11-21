@@ -16,6 +16,7 @@ public class ConsumeRESTApi {
 		*/
 		System.out.println(template.postForEntity("http://localhost:8980/ChartBoxApp/api/setuserapi",id,RegisterDto.class).getHeaders().getLocation().toString());
 		System.out.println(template.postForLocation("http://localhost:8980/ChartBoxApp/api/setuserapi", id).toString());
+		
 		return null;
 	}
 

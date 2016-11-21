@@ -27,15 +27,16 @@ public class CustomUserDetailsService implements UserDetailsService {
 			throw new UsernameNotFoundException("User Email ID NotFound");
 		}
 		//Add and active and inactive colume in database and change 3rd Para
-		return new org.springframework.security.core.userdetails.User(user.getUserEmail(),user.getUserPassword(),true,true,true,true,getGrantedAuthorities(user));
-		
+		return new org.springframework.security.core.userdetails.User(user.getUserEmail(),user.getUserPassword(),true,true,true,true,getGrantedAuthorities(user));	
 	}
+	
 	
 	private List<GrantedAuthority> getGrantedAuthorities(RegisterDto user){
 		System.out.println("[CustomUserDetailsService][getGrantedAuthorities] "+user) ;
 		List<GrantedAuthority> authority = new ArrayList<GrantedAuthority>();
 				authority.add(new SimpleGrantedAuthority("ROLE_USER"));
 		return authority;
+		
 		
 	}
 	

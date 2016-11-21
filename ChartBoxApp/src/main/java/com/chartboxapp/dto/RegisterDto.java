@@ -29,6 +29,7 @@ public class RegisterDto {
 	private Date userCreateDate;
 	
 	public Date getUserCreateDate() {
+		
 		return userCreateDate;
 	}
 	public void setUserCreateDate(Date userCreateDate) {

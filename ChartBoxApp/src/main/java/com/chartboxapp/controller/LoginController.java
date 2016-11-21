@@ -30,6 +30,7 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[redirectToLogin][ login Page Loaded]");
 		return new ModelAndView("redirect:login");
+		
 	}
 	
 	@RequestMapping(value="login",method = RequestMethod.GET)

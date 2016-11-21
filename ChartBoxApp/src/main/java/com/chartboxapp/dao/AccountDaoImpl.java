@@ -20,6 +20,7 @@ public class AccountDaoImpl implements AccountDao {
 	public void addUser(RegisterDto registerDto) {
 		sessionFactory.getCurrentSession().save(registerDto);
 		
+		
 	}
 
 	@Override
