@@ -1,7 +1,5 @@
 package com.ChartBoxAppTest;
 
-import java.util.Arrays;
-
 public class ConfigurationTest {
 
 	public static void main(String[] args) {

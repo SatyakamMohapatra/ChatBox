@@ -1,9 +1,6 @@
 package com.chartboxapp.dao;
 
 import javax.persistence.Query;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
