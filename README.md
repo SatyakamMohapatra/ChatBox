@@ -22,7 +22,7 @@
 ![Register](https://s18.postimg.org/8ris1xrjt/Register.jpg)
 
 # TODO LIST
-1. Working on chart module
+1. Working on chat module
 2. Oauth 2 Integration
 
 
