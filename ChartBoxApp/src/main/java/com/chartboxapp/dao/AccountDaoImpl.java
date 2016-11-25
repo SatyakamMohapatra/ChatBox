@@ -26,7 +26,6 @@ public class AccountDaoImpl implements AccountDao {
 				+ " = :userEmail");
 		System.out.println(EmailID);
 		RegisterDto result =(RegisterDto) query.setParameter("userEmail", EmailID).getSingleResult();
-	
 		System.out.println(result);
 		return result;
 	}
