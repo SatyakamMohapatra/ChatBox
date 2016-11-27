@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.chartboxapp.domain.RegisterBO;
 import com.chartboxapp.dto.LoginDTO;
 import com.chartboxapp.dto.RegisterDTO;
 import com.chartboxapp.service.AccountService;
@@ -36,11 +34,11 @@ public class LoginController {
 	public ModelAndView loginView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[loginView][ login Page Loaded]");
-		return new ModelAndView("login","LoginVO",new LoginDTO() );
+		return new ModelAndView("login","loginDTO",new LoginDTO() );
 	}
 	
 	@RequestMapping(value="login",method = RequestMethod.POST)
-	public ModelAndView LoginProcess(@ModelAttribute("LoginDTO") LoginDTO loginDTO) {
+	public ModelAndView LoginProcess(@ModelAttribute("loginDTO") LoginDTO loginDTO) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
 		
@@ -52,11 +50,11 @@ public class LoginController {
 	public ModelAndView registerView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"		
 							   + "[registerView][ register Page Loaded]");		
-		return new ModelAndView("register","RegisterDTO",new RegisterDTO());
+		return new ModelAndView("register","registerDTO",new RegisterDTO());
 	}
 	
 	@RequestMapping(value="register",method = RequestMethod.POST)
-	public ModelAndView registerProcess(@ModelAttribute("RegisterDTO") RegisterDTO registerDTO) {
+	public ModelAndView registerProcess(@ModelAttribute("registerDTO") RegisterDTO registerDTO) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 			              	+ "[registerProcess][ register Page Loaded]");		
 		accountService.addUser(registerDTO);

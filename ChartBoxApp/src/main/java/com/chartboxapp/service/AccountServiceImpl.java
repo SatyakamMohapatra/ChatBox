@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.chartboxapp.dao.AccountDao;
 import com.chartboxapp.domain.RegisterBO;
 import com.chartboxapp.dto.RegisterDTO;
+import com.chartboxapp.utility.ObjectBuilder;
 
 @Service
 @Transactional
@@ -22,13 +23,15 @@ public class AccountServiceImpl implements AccountService {
 	public void addUser(RegisterDTO registerDTO) {
 		Date date = Calendar.getInstance().getTime();
 		registerDTO.setUserCreateDate(date);
-		accountDao.addUser(registerDTO);
+		RegisterBO registerBO  = new RegisterBO();
+		registerBO = ObjectBuilder.DTO2BO(registerDTO);
+		accountDao.addUser(registerBO);
 	}
 
 	@Override
-	public RegisterBO getUser(String EmailID) {
-		RegisterBO result = accountDao.getUser(EmailID);
-		return result;
+	public RegisterDTO getUser(String EmailID) {
+		RegisterBO registerBO = accountDao.getUser(EmailID);
+		return ObjectBuilder.BO2DTO(registerBO);
 		
 	}
 

@@ -5,7 +5,7 @@ import com.chartboxapp.dto.RegisterDTO;
 
 public interface AccountDao {
 	
-	public void addUser(RegisterDTO registerDTO);
+	public void addUser(RegisterBO registerBO);
 	
 	public RegisterBO getUser(String EmailID);
 	

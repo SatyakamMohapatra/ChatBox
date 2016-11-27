@@ -9,17 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="user_details")
+@Table(name="user_details",uniqueConstraints=@UniqueConstraint(columnNames = { "user_email" }))
 public class RegisterBO {
-	
+	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")
 	private int userID;
 	@Column(name="user_name",nullable=false)
 	private String userName;
-	@Id
 	@Column(name="user_email",nullable=false)
 	private String userEmail;
 	@Column(name="user_password",nullable=false)
