@@ -11,7 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import com.chartboxapp.dto.RegisterDto;
+
+import com.chartboxapp.domain.RegisterBO;
 
 @Service("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {
@@ -20,7 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	AccountService accountService;
 	@Override
 	public UserDetails loadUserByUsername(String emailID) throws UsernameNotFoundException {
-		RegisterDto user = accountService.getUser(emailID);
+		RegisterBO user = accountService.getUser(emailID);
 		System.out.println("CustomUserDetailsService[loadUserByUsername][UserDetails:-][]"+ user);
 		if (user == null) {
 			System.out.println("CustomUserDetailsService[loadUserByUsername][UserDetails:-][UserNotFound]");	
@@ -31,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	}
 	
 	
-	private List<GrantedAuthority> getGrantedAuthorities(RegisterDto user){
+	private List<GrantedAuthority> getGrantedAuthorities(RegisterBO user){
 		System.out.println("[CustomUserDetailsService][getGrantedAuthorities] "+user) ;
 		List<GrantedAuthority> authority = new ArrayList<GrantedAuthority>();
 				authority.add(new SimpleGrantedAuthority("ROLE_USER"));

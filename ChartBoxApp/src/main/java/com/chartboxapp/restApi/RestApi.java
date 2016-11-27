@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chartboxapp.dto.RegisterDto;
+import com.chartboxapp.domain.RegisterBO;
 
 @RestController
 public class RestApi {
 	
 	@RequestMapping(produces="application/json",method=RequestMethod.GET,path="/api/getuserapi/{id}")
-	public RegisterDto getUserApi(@PathVariable("id") Integer userID){
-		RegisterDto dto = new RegisterDto();
+	public RegisterBO getUserApi(@PathVariable("id") Integer userID){
+		RegisterBO dto = new RegisterBO();
 		dto.setUserID(userID);
 		dto.setUserEmail("satya@gmail.com");
 		dto.setUserName("satya");
@@ -29,10 +29,10 @@ public class RestApi {
 	
 	
 	@RequestMapping(method=RequestMethod.POST,path="/api/setuserapi")
-	public ResponseEntity<RegisterDto> setUserApi(@RequestBody Integer userID) throws URISyntaxException{	
+	public ResponseEntity<RegisterBO> setUserApi(@RequestBody Integer userID) throws URISyntaxException{	
 		System.out.println("setUserApi [RESTfull api called ]" + userID);
 		
-		RegisterDto dto = new RegisterDto();
+		RegisterBO dto = new RegisterBO();
 		dto.setUserID(userID);
 		dto.setUserEmail("satya@gmail.com");
 		dto.setUserName("satya");
@@ -42,7 +42,7 @@ public class RestApi {
 		URI uri = new URI("/api/setuserapi/"+userID);
 		responseHeaders.setLocation(uri);
 		
-		return new ResponseEntity<RegisterDto>(dto,responseHeaders,HttpStatus.OK);
+		return new ResponseEntity<RegisterBO>(dto,responseHeaders,HttpStatus.OK);
 		/*if(dto.getUserID()==10){
 			System.out.println(dto);
 			return new ResponseEntity<RegisterDto>(dto,HttpStatus.OK);

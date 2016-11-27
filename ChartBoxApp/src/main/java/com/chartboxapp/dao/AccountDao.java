@@ -1,12 +1,12 @@
 package com.chartboxapp.dao;
 
-import com.chartboxapp.dto.RegisterDto;
+import com.chartboxapp.domain.RegisterBO;
 
 public interface AccountDao {
 	
-	public void addUser(RegisterDto registerDto);
+	public void addUser(RegisterBO registerDto);
 	
-	public RegisterDto getUser(String EmailID);
+	public RegisterBO getUser(String EmailID);
 	
 
 }

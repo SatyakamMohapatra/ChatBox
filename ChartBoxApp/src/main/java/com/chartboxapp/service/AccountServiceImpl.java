@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.chartboxapp.dao.AccountDao;
-import com.chartboxapp.dto.RegisterDto;
+import com.chartboxapp.domain.RegisterBO;
 
 @Service
 @Transactional
@@ -18,15 +18,15 @@ public class AccountServiceImpl implements AccountService {
 	private AccountDao accountDao;
 	
 	@Override
-	public void addUser(RegisterDto registerDto) {
+	public void addUser(RegisterBO registerBO) {
 		Date date = Calendar.getInstance().getTime();
-		registerDto.setUserCreateDate(date);
-		accountDao.addUser(registerDto);
+		registerBO.setUserCreateDate(date);
+		accountDao.addUser(registerBO);
 	}
 
 	@Override
-	public RegisterDto getUser(String EmailID) {
-		RegisterDto result = accountDao.getUser(EmailID);
+	public RegisterBO getUser(String EmailID) {
+		RegisterBO result = accountDao.getUser(EmailID);
 		return result;
 		
 	}

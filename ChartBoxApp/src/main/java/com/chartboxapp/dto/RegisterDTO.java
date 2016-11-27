@@ -1,5 +1,6 @@
-package com.chartboxapp.domain;
+package com.chartboxapp.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,22 +11,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
-@Table(name="user_details")
-public class RegisterBO {
+public class RegisterDTO implements Serializable {
 	
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="user_id")
 	private int userID;
-	@Column(name="user_name",nullable=false)
 	private String userName;
-	@Id
-	@Column(name="user_email",nullable=false)
 	private String userEmail;
-	@Column(name="user_password",nullable=false)
 	private String userPassword;
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="user_createion_date",nullable=false)
 	private Date userCreateDate;
 	
 	public Date getUserCreateDate() {

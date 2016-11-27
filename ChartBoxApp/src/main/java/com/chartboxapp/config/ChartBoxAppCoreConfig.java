@@ -70,7 +70,7 @@ public class ChartBoxAppCoreConfig {
 	public LocalSessionFactoryBean sessionFactory(DataSource dataSource){
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
-		sessionFactory.setPackagesToScan(new String[]{"com.chartboxapp.dto"});
+		sessionFactory.setPackagesToScan(new String[]{"com.chartboxapp.domain"});
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}

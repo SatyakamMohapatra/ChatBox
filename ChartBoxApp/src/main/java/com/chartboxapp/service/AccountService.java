@@ -1,9 +1,9 @@
 package com.chartboxapp.service;
 
-import com.chartboxapp.dto.RegisterDto;
+import com.chartboxapp.domain.RegisterBO;
 
 public interface AccountService {
-	void addUser(RegisterDto registerDto);
-	public RegisterDto getUser(String EmailID);
+	void addUser(RegisterBO registerDto);
+	public RegisterBO getUser(String EmailID);
 	
 }

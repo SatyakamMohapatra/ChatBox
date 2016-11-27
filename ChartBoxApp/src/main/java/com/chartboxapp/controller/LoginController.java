@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import com.chartboxapp.dto.RegisterDto;
+
+import com.chartboxapp.domain.RegisterBO;
 import com.chartboxapp.form.LoginForm;
 import com.chartboxapp.service.AccountService;
 
@@ -50,11 +51,11 @@ public class LoginController {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				
 				+ "[registerView][ register Page Loaded]");		
-		return new ModelAndView("register","RegesterModel",new RegisterDto());
+		return new ModelAndView("register","RegesterModel",new RegisterBO());
 	}
 	
 	@RequestMapping(value="register",method = RequestMethod.POST)
-	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterDto registerDto) {
+	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterBO registerDto) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[registerProcess][ register Page Loaded]");
 		accountService.addUser(registerDto);
