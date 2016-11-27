@@ -1,26 +1,18 @@
 package com.chartboxapp.dto;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.chartboxapp.domain.RegisterBO;
 
-public class RegisterDTO implements Serializable {
+public class RegisterDTO{
 	
 	private int userID;
 	private String userName;
 	private String userEmail;
 	private String userPassword;
 	private Date userCreateDate;
+	private RegisterBO registerBO;
 	
 	public Date getUserCreateDate() {
-		
 		return userCreateDate;
 	}
 	public void setUserCreateDate(Date userCreateDate) {
@@ -50,6 +42,7 @@ public class RegisterDTO implements Serializable {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
+	
 	@Override
 	public String toString() {
 		return "RegisterDto [userID=" + userID + ", userName=" + userName + ", userEmail=" + userEmail

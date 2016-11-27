@@ -1,6 +1,6 @@
-package com.chartboxapp.form;
+package com.chartboxapp.dto;
 
-public class LoginForm {
+public class LoginDTO {
 	
 	private String emailID;
 	private String password;

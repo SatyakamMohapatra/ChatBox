@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.chartboxapp.dao.AccountDao;
 import com.chartboxapp.domain.RegisterBO;
+import com.chartboxapp.dto.RegisterDTO;
 
 @Service
 @Transactional
@@ -18,10 +19,10 @@ public class AccountServiceImpl implements AccountService {
 	private AccountDao accountDao;
 	
 	@Override
-	public void addUser(RegisterBO registerBO) {
+	public void addUser(RegisterDTO registerDTO) {
 		Date date = Calendar.getInstance().getTime();
-		registerBO.setUserCreateDate(date);
-		accountDao.addUser(registerBO);
+		registerDTO.setUserCreateDate(date);
+		accountDao.addUser(registerDTO);
 	}
 
 	@Override

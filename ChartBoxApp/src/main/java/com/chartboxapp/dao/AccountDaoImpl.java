@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.chartboxapp.domain.RegisterBO;
+import com.chartboxapp.dto.RegisterDTO;
 
 @Repository
 public class AccountDaoImpl implements AccountDao {
@@ -14,8 +15,8 @@ public class AccountDaoImpl implements AccountDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public void addUser(RegisterBO registerBO) {
-		sessionFactory.getCurrentSession().save(registerBO);
+	public void addUser(RegisterDTO registerDTO) {
+		sessionFactory.getCurrentSession().save(registerDTO);
 	}
 
 	@Override

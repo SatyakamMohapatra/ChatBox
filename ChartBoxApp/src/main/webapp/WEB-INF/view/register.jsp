@@ -38,7 +38,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form:form action="register" method="post" modelAttribute="RegesterModel">
+    <form:form action="register" method="post" modelAttribute="RegisterDTO">
       <div class="form-group has-feedback">
       	<form:input path="userName" cssClass="form-control" placeholder="Full name"/>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>

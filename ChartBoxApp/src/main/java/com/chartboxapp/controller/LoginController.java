@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chartboxapp.domain.RegisterBO;
-import com.chartboxapp.form.LoginForm;
+import com.chartboxapp.dto.LoginDTO;
+import com.chartboxapp.dto.RegisterDTO;
 import com.chartboxapp.service.AccountService;
 
 @Controller
@@ -35,37 +36,34 @@ public class LoginController {
 	public ModelAndView loginView() {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[loginView][ login Page Loaded]");
-		return new ModelAndView("login","LoginModel",new LoginForm() );
+		return new ModelAndView("login","LoginVO",new LoginDTO() );
 	}
 	
 	@RequestMapping(value="login",method = RequestMethod.POST)
-	public ModelAndView LoginProcess(@ModelAttribute("LoginModel") LoginForm loginForm) {
+	public ModelAndView LoginProcess(@ModelAttribute("LoginDTO") LoginDTO loginDTO) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
 				+ "[LoginProcess][ Trying To Load Profile Page Loaded]");
-		System.out.println(loginForm);
+		
+		System.out.println(loginDTO);
 		return new ModelAndView("profile");
 	}
 	
 	@RequestMapping(value="register",method = RequestMethod.GET)
 	public ModelAndView registerView() {
-		System.out.println("[com.chartboxapp.controller.LoginController]"
-				
-				+ "[registerView][ register Page Loaded]");		
-		return new ModelAndView("register","RegesterModel",new RegisterBO());
+		System.out.println("[com.chartboxapp.controller.LoginController]"		
+							   + "[registerView][ register Page Loaded]");		
+		return new ModelAndView("register","RegisterDTO",new RegisterDTO());
 	}
 	
 	@RequestMapping(value="register",method = RequestMethod.POST)
-	public ModelAndView registerProcess(@ModelAttribute("RegesterModel") RegisterBO registerDto) {
+	public ModelAndView registerProcess(@ModelAttribute("RegisterDTO") RegisterDTO registerDTO) {
 		System.out.println("[com.chartboxapp.controller.LoginController]"
-				+ "[registerProcess][ register Page Loaded]");
-		accountService.addUser(registerDto);
-		System.out.println(registerDto);
+			              	+ "[registerProcess][ register Page Loaded]");		
+		accountService.addUser(registerDTO);
+		System.out.println(registerDTO);
 		return new ModelAndView("redirect:login");
 	}
 	
-	/*
-	 * Logout Module
-	 */
 	@RequestMapping(value="/logout",method=RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request ,HttpServletResponse response){
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -75,16 +73,5 @@ public class LoginController {
 		return "redirect:/login?logout";
 	}
 	
-	//Username which we can place in all webpage
-	/*private String getPrincipal(){
-		String UserName = null;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if(principal instanceof UserDetails){
-			UserName = ((UserDetails) principal).getUsername();
-		}else{
-			UserName=principal.toString();
-		}
-		return UserName;
-	}*/
 
 }

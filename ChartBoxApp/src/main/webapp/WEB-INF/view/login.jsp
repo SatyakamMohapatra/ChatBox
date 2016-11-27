@@ -38,7 +38,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
     
-    <form:form action="login" method="post" modelAttribute="LoginModel">
+    <form:form action="login" method="post" modelAttribute="LoginDTO">
       <div class="form-group has-feedback">
       	<form:input path="emailID" cssClass="form-control"/>
         <%-- <form type="emailID" class="form-control" placeholder="Email"> --%>
