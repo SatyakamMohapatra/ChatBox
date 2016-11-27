@@ -15,7 +15,7 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Override
 	public void addUser(RegisterBO registerBO) {
-		sessionFactory.getCurrentSession().save(registerBO);	
+		sessionFactory.getCurrentSession().save(registerBO);
 	}
 
 	@Override
