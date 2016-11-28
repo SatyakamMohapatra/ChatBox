@@ -1,7 +1,6 @@
 package com.chartboxapp.dto;
 
 import java.util.Date;
-import com.chartboxapp.domain.RegisterBO;
 
 public class RegisterDTO{
 	
@@ -10,7 +9,6 @@ public class RegisterDTO{
 	private String userEmail;
 	private String userPassword;
 	private Date userCreateDate;
-	private RegisterBO registerBO;
 	
 	public Date getUserCreateDate() {
 		return userCreateDate;
