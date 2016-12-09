@@ -1,5 +1,7 @@
 package com.chartboxapp.restApi;
 
+import java.util.List;
+
 import org.springframework.web.client.RestTemplate;
 
 import com.chartboxapp.domain.RegisterBO;
@@ -10,6 +12,7 @@ public class ConsumeRESTApi {
 		
 	
 		RestTemplate template = new RestTemplate();
+		List list;
 		
 		/*
 		RegisterDto dto =template.getForObject("http://localhost:8080/ChartBoxApp/api/getuserapi/{id}",RegisterDto.class,id);
