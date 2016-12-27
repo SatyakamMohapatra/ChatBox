@@ -14,6 +14,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name="user_details",uniqueConstraints=@UniqueConstraint(columnNames = { "user_email" }))
 public class RegisterBO {
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")

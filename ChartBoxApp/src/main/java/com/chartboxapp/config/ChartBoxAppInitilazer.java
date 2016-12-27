@@ -19,6 +19,5 @@ public class ChartBoxAppInitilazer extends AbstractAnnotationConfigDispatcherSer
 	protected String[] getServletMappings() {
 		return new String[]{"/"};
 	}
-	
 
 }

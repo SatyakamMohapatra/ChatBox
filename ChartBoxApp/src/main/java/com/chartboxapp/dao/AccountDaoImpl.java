@@ -11,12 +11,12 @@ public class AccountDaoImpl implements AccountDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
-
+	
 	@Override
 	public void addUser(RegisterBO registerBO) {
 		sessionFactory.getCurrentSession().save(registerBO);
 	}
-
+	
 	@Override
 	public RegisterBO getUser(String EmailID) {
 		Query query=sessionFactory.getCurrentSession().createQuery("from RegisterBO where userEmail"
@@ -27,3 +27,4 @@ public class AccountDaoImpl implements AccountDao {
 		return registerBO;
 	}
 }
+ 
